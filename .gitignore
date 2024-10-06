@@ -2,6 +2,7 @@
 logs
 *.log
 npm-debug.log*
+<<<<<<< HEAD
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
@@ -128,3 +129,29 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+=======
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Environment variables
+.env
+
+# IDE or OS files
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Ignore Cert
+*.crt
+*.pem
+
+# Build files
+dist/
+build/
+
+#ignore local mount
+data/
+>>>>>>> 59968fa (Commit#1 - Initial Commit)

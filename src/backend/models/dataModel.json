@@ -1,0 +1,167 @@
+{
+  "entities": {
+    "Student": {
+      "id": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "dateOfBirth": "date",
+      "email": "string",
+      "phoneNumber": "string",
+      "address": {
+        "street": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": "string"
+      },
+      "enrollmentDate": "date",
+      "classesEnrolled": [
+        {
+          "classId": "string",
+          "className": "string",
+          "startDate": "date",
+          "endDate": "date"
+        }
+      ],
+      "attendance": [
+        {
+          "classId": "string",
+          "date": "date",
+          "status": "Present | Absent | Late | Excused"
+        }
+      ],
+      "grades": [
+        {
+          "classId": "string",
+          "testId": "string",
+          "grade": "string",
+          "gradeDate": "date"
+        }
+      ]
+    },
+    "Teacher": {
+      "id": "string",
+      "firstName": "string",
+      "lastName": "string",
+      "email": "string",
+      "phoneNumber": "string",
+      "address": {
+        "street": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": "string"
+      },
+      "hireDate": "date",
+      "subjectsTaught": [
+        {
+          "subjectId": "string",
+          "subjectName": "string"
+        }
+      ],
+      "classesAssigned": [
+        {
+          "classId": "string",
+          "className": "string",
+          "startDate": "date",
+          "endDate": "date"
+        }
+      ]
+    },
+    "Class": {
+      "id": "string",
+      "className": "string",
+      "subject": "string",
+      "teacherId": "string",
+      "schedule": {
+        "startTime": "string",
+        "endTime": "string",
+        "daysOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+        ]
+      },
+      "studentsEnrolled": [
+        {
+          "studentId": "string",
+          "studentName": "string",
+          "enrollmentDate": "date"
+        }
+      ],
+      "tests": [
+        {
+          "testId": "string",
+          "testName": "string",
+          "testDate": "date",
+          "totalMarks": "number"
+        }
+      ]
+    },
+    "Grade": {
+      "id": "string",
+      "studentId": "string",
+      "classId": "string",
+      "testId": "string",
+      "grade": "string",
+      "gradeDate": "date"
+    },
+    "Test": {
+      "id": "string",
+      "classId": "string",
+      "testName": "string",
+      "testDate": "date",
+      "totalMarks": "number",
+      "testResults": [
+        {
+          "studentId": "string",
+          "grade": "string",
+          "marksObtained": "number"
+        }
+      ]
+    },
+    "Event": {
+      "id": "string",
+      "eventName": "string",
+      "eventDate": "date",
+      "description": "string",
+      "participants": [
+        {
+          "id": "string",
+          "name": "string",
+          "role": "Student | Teacher"
+        }
+      ]
+    },
+    "Announcement": {
+      "id": "string",
+      "title": "string",
+      "description": "string",
+      "postedDate": "date",
+      "postedBy": "string"
+    }
+  },
+  "relationships": {
+    "Student_Class": {
+      "Student": "OneToMany",
+      "Class": "ManyToOne"
+    },
+    "Teacher_Class": {
+      "Teacher": "OneToMany",
+      "Class": "ManyToOne"
+    },
+    "Class_Test": {
+      "Class": "OneToMany",
+      "Test": "ManyToOne"
+    },
+    "Student_Grade": {
+      "Student": "OneToMany",
+      "Grade": "ManyToOne"
+    },
+    "Class_Announcement": {
+      "Class": "OneToMany",
+      "Announcement": "ManyToOne"
+    },
+    "Event_Participants": {
+      "Event": "OneToMany",
+      "Participants": "ManyToOne"
+    }
+  }
+}
+

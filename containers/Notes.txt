@@ -1,0 +1,3 @@
+// command to connect to mongodb running in podman
+mongosh "mongodb://admin:admin@localhost:27017/"
+

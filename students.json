@@ -1,0 +1,281 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "dateOfBirth": "2005-06-15",
+        "email": "john.doe@example.com",
+        "phoneNumber": "123-456-7890",
+        "address": {
+            "street": "123 Elm St",
+            "city": "New York",
+            "state": "NY",
+            "postalCode": "10001"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C1",
+                "className": "Math 101",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [
+            {
+                "classId": "C1",
+                "date": "2023-09-05",
+                "status": "Present"
+            }
+        ],
+        "grades": [
+            {
+                "classId": "C1",
+                "testId": "T1",
+                "grade": "A",
+                "gradeDate": "2023-10-01"
+            }
+        ]
+    },
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "dateOfBirth": "2006-03-12",
+        "email": "jane.smith@example.com",
+        "phoneNumber": "234-567-8901",
+        "address": {
+            "street": "456 Oak St",
+            "city": "Los Angeles",
+            "state": "CA",
+            "postalCode": "90001"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C2",
+                "className": "History 101",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [
+            {
+                "classId": "C2",
+                "date": "2023-09-05",
+                "status": "Present"
+            }
+        ],
+        "grades": [
+            {
+                "classId": "C2",
+                "testId": "T2",
+                "grade": "B",
+                "gradeDate": "2023-10-01"
+            }
+        ]
+    },
+    {
+        "firstName": "Tom",
+        "lastName": "Jackson",
+        "dateOfBirth": "2005-09-21",
+        "email": "tom.jackson@example.com",
+        "phoneNumber": "345-678-9012",
+        "address": {
+            "street": "789 Pine St",
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60601"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C3",
+                "className": "Science 101",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [
+            {
+                "classId": "C3",
+                "date": "2023-09-05",
+                "status": "Late"
+            }
+        ],
+        "grades": [
+            {
+                "classId": "C3",
+                "testId": "T3",
+                "grade": "A-",
+                "gradeDate": "2023-10-01"
+            }
+        ]
+    },
+    {
+        "firstName": "Angela",
+        "lastName": "Merkel",
+        "dateOfBirth": "1954-07-08",
+        "email": "angela.merkel@example.com",
+        "phoneNumber": "456-789-0123",
+        "address": {
+            "street": "321 Maple St",
+            "city": "Berlin",
+            "state": "Germany",
+            "postalCode": "10115"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C4",
+                "className": "Political Science",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Justin",
+        "lastName": "Trudeau",
+        "dateOfBirth": "1971-12-25",
+        "email": "justin.trudeau@example.com",
+        "phoneNumber": "567-890-1234",
+        "address": {
+            "street": "654 Birch St",
+            "city": "Ottawa",
+            "state": "Canada",
+            "postalCode": "K1A0B1"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C5",
+                "className": "Canadian History",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Barack",
+        "lastName": "Obama",
+        "dateOfBirth": "1961-08-04",
+        "email": "barack.obama@example.com",
+        "phoneNumber": "678-901-2345",
+        "address": {
+            "street": "987 Cedar St",
+            "city": "Chicago",
+            "state": "IL",
+            "postalCode": "60614"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C6",
+                "className": "American Politics",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Nelson",
+        "lastName": "Mandela",
+        "dateOfBirth": "1918-07-18",
+        "email": "nelson.mandela@example.com",
+        "phoneNumber": "789-012-3456",
+        "address": {
+            "street": "135 Walnut St",
+            "city": "Johannesburg",
+            "state": "South Africa",
+            "postalCode": "2000"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C7",
+                "className": "Global Studies",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Jacinda",
+        "lastName": "Ardern",
+        "dateOfBirth": "1980-07-26",
+        "email": "jacinda.ardern@example.com",
+        "phoneNumber": "890-123-4567",
+        "address": {
+            "street": "246 Chestnut St",
+            "city": "Wellington",
+            "state": "New Zealand",
+            "postalCode": "6011"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C8",
+                "className": "Social Justice",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Vladimir",
+        "lastName": "Putin",
+        "dateOfBirth": "1952-10-07",
+        "email": "vladimir.putin@example.com",
+        "phoneNumber": "901-234-5678",
+        "address": {
+            "street": "159 Ash St",
+            "city": "Moscow",
+            "state": "Russia",
+            "postalCode": "101000"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C9",
+                "className": "International Relations",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    },
+    {
+        "firstName": "Emmanuel",
+        "lastName": "Macron",
+        "dateOfBirth": "1977-12-21",
+        "email": "emmanuel.macron@example.com",
+        "phoneNumber": "012-345-6789",
+        "address": {
+            "street": "258 Spruce St",
+            "city": "Paris",
+            "state": "France",
+            "postalCode": "75001"
+        },
+        "enrollmentDate": "2023-09-01",
+        "classesEnrolled": [
+            {
+                "classId": "C10",
+                "className": "French Literature",
+                "startDate": "2023-09-05",
+                "endDate": "2023-12-20"
+            }
+        ],
+        "attendance": [],
+        "grades": []
+    }
+]    

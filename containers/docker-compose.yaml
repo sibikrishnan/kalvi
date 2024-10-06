@@ -1,0 +1,70 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:latest  # Use the Bitnami Zookeeper image
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes  # Allow anonymous logins
+    ports:
+      - "2181:2181"  # Expose Zookeeper port
+    networks:
+      #- kafka-network
+      - backend-network  # Connect to the custom Kafka network
+
+  kafka:
+    image: docker.io/bitnami/kafka:3  # Use the Bitnami Kafka image
+    ports:
+      - "29092:29092"  # External port for client access
+      - "9092:9092"  # Internal port for inter-broker communication
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181  # Connect to Zookeeper
+      - ALLOW_PLAINTEXT_LISTENER=yes  # Allow plaintext communication
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT  # Security protocol mapping
+      - KAFKA_CFG_LISTENERS=CLIENT://0.0.0.0:9092,EXTERNAL://0.0.0.0:29092  # Configure listeners
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://localhost:29092  # Advertise listeners
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT  # Set inter-broker listener name
+    depends_on:
+      - zookeeper  # Ensure Zookeeper starts before Kafka
+    networks:
+      #- kafka-network
+      - backend-network  # Connect to the custom Kafka network
+
+  kafka-manager:
+    image: docker.io/hlebalbau/kafka-manager:latest
+    ports:
+      - "9001:9000"  # Change host port to 9001 to avoid conflict
+    environment:
+      - ZK_HOSTS=zookeeper:2181  # Connect to your Zookeeper instance
+    networks:
+      - backend-network
+      #- kafka-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container
+    ports:
+      - "27017:27017" # Mapping MongoDB's default port
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin     # MongoDB root username
+      MONGO_INITDB_ROOT_PASSWORD: admin # MongoDB root password
+    volumes:
+      - ./data:/data/db  # Persistent volume for data storage
+    networks:
+      - backend-network  # Use the same network as your other services
+
+  school-management:
+    build:
+      context: ../  # Update with your Node.js app path
+      dockerfile: Dockerfile  # Specify your Dockerfile if not named 'Dockerfile'
+    ports:
+      - "5000:5000"  # Map your Node.js app port
+    environment:
+      MONGO_URI: mongodb://admin:admin@mongodb-container:27017/  # Connect to MongoDB
+    networks:
+      - backend-network  # Use the same network as MongoDB
+
+networks:
+  kafka-network:
+    driver: bridge  # Use a bridge network for the containers
+  backend-network:
+    driver: bridge  # Use a bridge network for backend services
