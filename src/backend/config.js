@@ -6,7 +6,9 @@ export default {
     kafkaTopic: 'application_topic',
     sourceDB: 'kalvi_db' ,
     clientID: 'school-management',
-    port: '5000',
-    brokers: 'containers_kafka_1:9092' // Kafka topic for the application data
+    nodePORT: '5000',
+    brokers: 'containers_kafka_1:9092',
+    modelName: 'sibikrishnan/school-management',
+    huggingFaceToken: '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'
   };
   

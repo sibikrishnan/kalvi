@@ -6,15 +6,12 @@ RUN apt-get update && apt-get install -y ca-certificates
 
 # Copy the custom root certificate
 COPY ./ZscalerRootCertificate-2048-SHA256.crt /usr/local/share/ca-certificates/
-COPY ./ZscalerRootCertificate-2048-SHA256.pem /usr/local/share/ca-certificates/
 
-ARG NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ZscalerRootCertificate-2048-SHA256.pem
-
-# Update the CA certificates
+# Update the CA certificates (process the new .crt)
 RUN update-ca-certificates
 
-# Verify the certificates were added
-RUN ls -al /etc/ca-certificates
+# Set NODE_EXTRA_CA_CERTS environment variable
+ENV NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/ZscalerRootCertificate-2048-SHA256.crt
 
 # Set the working directory in the container
 WORKDIR /app

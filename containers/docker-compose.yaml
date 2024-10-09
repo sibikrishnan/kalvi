@@ -61,7 +61,8 @@ services:
     environment:
       MONGO_URI: mongodb://admin:admin@mongodb-container:27017/  # Connect to MongoDB
     networks:
-      - backend-network  # Use the same network as MongoDB
+      - backend-network
+      # Use the same network as MongoDB
 
 networks:
   kafka-network:
